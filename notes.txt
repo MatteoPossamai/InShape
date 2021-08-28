@@ -1,0 +1,11 @@
+InShape
+
+Home page with no required login, into you can measure: 
+            BMI, 
+            calorie requirement, 
+            ideal weight,
+            how many water you should drink,
+            body fat percentage
+
+You can log, memorize your datas, set your goals, get hints and diet
+Called MyShape Pro, also for free, but tracks everithing, calories and activity
