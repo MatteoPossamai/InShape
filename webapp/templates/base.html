@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+        {% block extrahead %}
+        {% endblock %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='baseStyle.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        {% block mainContent %}
+        {% endblock %}
+        <div class = footer>
+            <p>prova</p>
+        </div>
+    </body>
+</html>

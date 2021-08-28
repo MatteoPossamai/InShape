@@ -1,0 +1,78 @@
+.title{
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    color: red;
+    margin-top: 20px;
+    font-size: 40pt;
+    font-weight: 3000;
+}
+
+.infoBar{
+    width:50%;
+    margin: auto;
+}
+
+.topMenu{
+    font-family: 'Merriweather', serif;
+    font-size: 18pt;
+    height: 50px;
+    width: 32%;
+    margin: -3px;
+    background-color: blue;
+    border-left:1px white solid;
+    border-right:1px white solid;
+    border-radius: 50px;
+}
+
+.startingContent{
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Merriweather', serif;
+    font-size: 20pt;
+    font-weight: 200;
+}
+
+.image{
+    margin: auto;
+    height:30%;
+    width:30%;
+    margin-top: 30px;
+}
+
+.widget{
+    display:flex;
+    margin: auto;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.lateral{
+    height: 75px;
+    width: 85px;
+    padding: 5px;
+}
+
+.ideal,.calories, .water, .fat, .bmi{
+    width:70%;
+    background-color: #f00;
+}
+
+.ideal,.calories, .water, .fat{
+    display: none;
+}
+
+table, th, td{
+    border: 1px #ddd solid;
+    margin: 10;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

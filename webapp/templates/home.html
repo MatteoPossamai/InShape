@@ -1,0 +1,216 @@
+{% extends 'base.html' %}
+
+{% block title%}
+InShape - Home
+{% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='viewStyle.css') }}">
+<script src="{{ url_for('static', filename='widget.js') }}"></script>
+{% endblock %}
+
+{% block mainContent %}
+<h1 class = title>InShape - The source of wellness</h1>
+
+<div class = infoBar>
+    <button value = "About" class = topMenu>About</button>
+    <button value = "Health Food" class = topMenu>Health Food</button>
+    <button value = "Your Plan" class = topMenu>Your Plan</button>
+</div>
+
+<img src = "{{ url_for('static', filename='fruit.jpg')}}" class = image>
+
+<p class = startingContent>
+    Welcome to InShape, the webapp into you can measure your wellness in a<br>
+    scientific way, via recognized formulas and algorithms. Do you want to<br>
+    return in shape, test how healthy you are, or are you only courios to<br>
+    know a little bit more about science behind an healthy life? <br> 
+    You are in the right place! 
+</p>
+
+<div class = widget>
+    <div class = buttons>
+        <button class = lateral>BMI</button>
+        <button class = lateral>Ideal weight</button>
+        <button class = lateral>Calories requirement</button>
+        <button class = lateral>Water requirement</button>
+        <button class = lateral>Body fat percentage</button>
+    </div>
+
+    <div class = calculator>
+        <div class = bmi>
+            <h1 class = subT>BMI calculator</h1>
+            <p>The BMI (body mass index) is and index that tells you if<br>
+                 your weight is good or not. Here is the table for results:
+                 </p>
+                <table>
+                    <tr>
+                        <th><b>BMI</b></td>
+                        <th><b>Condition</b></td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;16.5</td>
+                        <td>Seriusly underweight</td>
+                    </tr>
+
+                    <tr>
+                        <td>16.5-18.5</td>
+                        <td>Underweight</td>
+                    </tr>
+
+                    <tr>
+                        <td>18.5-24.5</td>
+                        <td>In shape</td>
+                    </tr>
+
+                    <tr>
+                        <td>24.5-30</td>
+                        <td>Overweight</td>
+                    </tr>
+
+                    <tr>
+                        <td>>30</td>
+                        <td>Obese</td>
+                    </tr>
+                </table>
+            <form>
+                <!--form with required entry-->
+                <p>Insert your height (in centimeters):</p>
+                <input type = "text">
+                <p>Insert your weight (in kilograms):</p>
+                <input type = "text">
+                <br><br>
+                <button value = calculate onclick="calculateBMI()">Calculate</button>
+                <br><br>
+                <p>Your BMI is:</p>
+            </form>
+        </div>
+
+        <div class = ideal>
+            <h1 class = subT>Ideal weight</h1>
+            <p>All we have our weight, but we don't know if it is too low <br>
+            or too high. The ideal weight is a weight calculated using your age,<br>
+            your height and your gender. This is the weight we should have to be in shape</p>
+            <form>
+                <!--form with required entry-->
+                <p>Insert your height (in centimeters):</p>
+                <input type = "text">
+                <p>Gender:</p>
+                <select>
+                    <option value = "m">Male</option>
+                    <option value = "f">Female</option>
+                </select>
+                <p>Insert your age :</p>
+                <input type = "number">
+                <br><br>
+                <button value = calculate onclick="calculateBMI()">Calculate</button>
+                <p>Your ideal weight is:</p>
+            </form>
+        </div>
+
+        <div class = calories>
+            <h1 class = subT>Calories requirement</h1>
+            <p> Calories are used as fuel from our body. They are necessary for our<br>
+            life. When you consume too little calories, your body fat reduces, when you<br>
+            consume too much, your fat increase. So, is necessary know the correct <br>
+            ammount of calories to consume. It depends on your ideal weight, your gender<br>
+            and how much calories you burn during the day</p>
+            <form>
+                <!--form with required entry-->
+                <p>Insert your ideal weight (in kilograms):</p>
+                <input type = "text">
+                <p>Gender:</p>
+                <select>
+                    <option value = "m">Male</option>
+                    <option value = "f">Female</option>
+                </select>
+                <p>Age:</p>
+                <input type = "number">
+                <p>Type of work:</p>
+                <select>
+                    <option value = "sed">Sedentary</option>
+                    <option value = "qhe">Quite heavy</option>
+                    <option value = "hev">Heavy</option>
+                </select>
+
+                <p>Wourkout</p>
+                <select>
+                    <option value = "sed">Less than 2hrs a week</option>
+                    <option value = "qhe">Beetween 2 and 5 hrs a week</option>
+                    <option value = "hev">Over 5hrs a week</option>
+                </select>
+                <br><br>
+                <button value = calculate onclick="calculateBMI()">Calculate</button>
+                <p>Your calories requirement is:</p>
+            </form>
+        </div>
+
+        <div class = water>
+            <h1 class = subT>Water requirement</h1>
+            <p>Water is one of the most important think we consume. <br>
+               There is a formula that shows how much water we should drink.<br>
+               The formula is the following </p>
+            <p>weight(in kilograms)*30ml</p>
+            <p>Insert your actual weight:</p>
+            <input type = "text">
+            <br><br>
+            <button value = calculate onclick="calculateBMI()">Calculate</button>
+            <p>Your water requirement is:</p>
+        </div>
+
+        <div class = fat>
+            <h1 class = subT>Body fat percentage</h1>
+            <p>Your fat percentage show you simply if you have too much fat in your<br>
+                body. Here is the table to compare your results</p>
+                <table>
+                    <tr>
+                        <th></td>
+                        <th><b>Male</b></td>
+                        <th><b>Female</b></th>
+                    </tr>
+
+                    <tr>
+                        <td>Athletes</td>
+                        <td>5.0-13.0</td>
+                        <td>12.0-16.0</td>
+                    </tr>
+
+                    <tr>
+                        <td>Preatty active persons</td>
+                        <td>13.0-18.0</td>
+                        <td>16.0-25.0</td>
+                    </tr>
+
+                    <tr>
+                        <td>Overweight</td>
+                        <td>19.0-24.0</td>
+                        <td>25.0-31.0</td>
+                    </tr>
+
+                    <tr>
+                        <td>Obese</td>
+                        <td>>24.0</td>
+                        <td>>31.0</td>
+                    </tr>
+                </table>
+            <p>Insert your height (in centimeters):</p>
+            <input type = "text">
+            <p>Gender:</p>
+            <select>
+                    <option value = "m">Male</option>
+                    <option value = "f">Female</option>
+            </select>
+            <p>Insert waist circumference:</p>
+            <input type = "text">
+            <p>Insert neck circumference:</p>
+            <input type = "text">
+            <p>Insert flanks circumference:</p>
+            <input type = "text">
+            <br><br>
+            <button value = calculate onclick="calculateBMI()">Calculate</button>
+            <p>Your body fat percentage is:</p>
+        </div>
+    </div>
+</div>
+{% endblock%}
