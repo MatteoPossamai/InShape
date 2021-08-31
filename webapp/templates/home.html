@@ -12,11 +12,11 @@ InShape - Home
 {% block mainContent %}
 <h1 class = title>InShape - The source of wellness</h1>
 
-<div class = infoBar>
-    <button value = "About" class = topMenu>About</button>
-    <button value = "Health Food" class = topMenu>Health Food</button>
-    <button value = "Your Plan" class = topMenu>Your Plan</button>
-</div>
+<form class = infoBar>
+    <input type = "submit" value = "About" class = topMenu formaction="{{ url_for('view.about') }}">
+    <button value = "Health Food" class = topMenu id = h>Health Food</button>
+    <button value = "Your Plan" class = topMenu id = p>Your Plan (PRO)</button>
+</form>
 
 <img src = "{{ url_for('static', filename='fruit.jpg')}}" class = image>
 
@@ -30,17 +30,17 @@ InShape - Home
 
 <div class = widget>
     <div class = buttons>
-        <button class = lateral>BMI</button>
-        <button class = lateral>Ideal weight</button>
-        <button class = lateral>Calories requirement</button>
-        <button class = lateral>Water requirement</button>
-        <button class = lateral>Body fat percentage</button>
+        <button class = lateral id = bmi onclick="change(0)">BMI</button>
+        <button class = lateral id = ideal onclick="change(1)">Ideal weight</button>
+        <button class = lateral id = calories onclick="change(2)">Calories requirement</button>
+        <button class = lateral id = water onclick="change(3)">Water requirement</button>
+        <button class = lateral id = fat onclick="change(4)">Body fat percentage</button>
     </div>
 
     <div class = calculator>
-        <div class = bmi>
+        <div class = bmi id = b>
             <h1 class = subT>BMI calculator</h1>
-            <p>The BMI (body mass index) is and index that tells you if<br>
+            <p>The BMI (body mass index) is and index that tells you if
                  your weight is good or not. Here is the table for results:
                  </p>
                 <table>
@@ -76,93 +76,102 @@ InShape - Home
                 </table>
             <form>
                 <!--form with required entry-->
-                <p>Insert your height (in centimeters):</p>
-                <input type = "text">
+                <p>Insert your height (in meters):</p>
+                <input type = "text" id = bmiHeight>
                 <p>Insert your weight (in kilograms):</p>
-                <input type = "text">
+                <input type = "text" id = bmiWeight>
                 <br><br>
                 <button value = calculate onclick="calculateBMI()">Calculate</button>
                 <br><br>
-                <p>Your BMI is:</p>
+                <p id = bmiResult></p>
             </form>
         </div>
 
-        <div class = ideal>
+        <div class = ideal id = i>
             <h1 class = subT>Ideal weight</h1>
-            <p>All we have our weight, but we don't know if it is too low <br>
-            or too high. The ideal weight is a weight calculated using your age,<br>
-            your height and your gender. This is the weight we should have to be in shape</p>
+            <p>All we have our weight, but we don't know if it is too low 
+            or too high. The ideal weight is a weight calculated using your age,
+            your height and your gender. This is the weight we should have to be in shape
+            This calculation is made by using the Lorentz formula, Perrault formula 
+            and Keys formula. The Lorentz formula doesn't count age, but is preatty 
+            accurate and really used. The Key formula does the same, and is the reccomended
+            one. The Perrault formula count also age, but tend to overestimate the result
+            An average around the three, is probably the best thing</p>
             <form>
-                <!--form with required entry-->
                 <p>Insert your height (in centimeters):</p>
-                <input type = "text">
+                <input type = "text" id = idealHeight>
                 <p>Gender:</p>
-                <select>
+                <select id = idealGender>
                     <option value = "m">Male</option>
                     <option value = "f">Female</option>
                 </select>
                 <p>Insert your age :</p>
-                <input type = "number">
+                <input type = "number" id = idealAge>
                 <br><br>
-                <button value = calculate onclick="calculateBMI()">Calculate</button>
-                <p>Your ideal weight is:</p>
+                <button value = calculate onclick="calculateIdeal()">Calculate</button>
+                <p id = idealResult></p>
             </form>
         </div>
 
-        <div class = calories>
+        <div class = calories id = c>
             <h1 class = subT>Calories requirement</h1>
-            <p> Calories are used as fuel from our body. They are necessary for our<br>
-            life. When you consume too little calories, your body fat reduces, when you<br>
-            consume too much, your fat increase. So, is necessary know the correct <br>
-            ammount of calories to consume. It depends on your ideal weight, your gender<br>
+            <p> Calories are used as fuel from our body. They are necessary for our
+            life. When you consume too little calories, your body fat reduces, when you
+            consume too much, your fat increase. So, is necessary know the correct 
+            ammount of calories to consume. It depends on your ideal weight, your gender
             and how much calories you burn during the day</p>
             <form>
                 <!--form with required entry-->
-                <p>Insert your ideal weight (in kilograms):</p>
-                <input type = "text">
+                <p>Insert your <b>ideal</b> weight (in kilograms):</p>
+                <input type = "text" id = caloriesWeight>
                 <p>Gender:</p>
-                <select>
+                <select id = caloriesGender>
                     <option value = "m">Male</option>
                     <option value = "f">Female</option>
                 </select>
                 <p>Age:</p>
-                <input type = "number">
+                <select id = caloriesAge>
+                    <option value = 18>18 - 29</option>
+                    <option value = 30>30 - 59</option>
+                    <option value = 60>60 - 74</option>
+                    <option value = 75>>75</option>
+                </select>
                 <p>Type of work:</p>
-                <select>
+                <select id = caloriesWork>
                     <option value = "sed">Sedentary</option>
                     <option value = "qhe">Quite heavy</option>
                     <option value = "hev">Heavy</option>
                 </select>
 
                 <p>Wourkout</p>
-                <select>
+                <select id = caloriesWorkout>
                     <option value = "sed">Less than 2hrs a week</option>
                     <option value = "qhe">Beetween 2 and 5 hrs a week</option>
                     <option value = "hev">Over 5hrs a week</option>
                 </select>
                 <br><br>
-                <button value = calculate onclick="calculateBMI()">Calculate</button>
+                <button value = calculate onclick="calculateCalories()">Calculate</button>
                 <p>Your calories requirement is:</p>
             </form>
         </div>
 
-        <div class = water>
+        <div class = water id = w>
             <h1 class = subT>Water requirement</h1>
-            <p>Water is one of the most important think we consume. <br>
-               There is a formula that shows how much water we should drink.<br>
+            <p>Water is one of the most important think we consume.
+               There is a formula that shows how much water we should drink.
                The formula is the following </p>
             <p>weight(in kilograms)*30ml</p>
             <p>Insert your actual weight:</p>
-            <input type = "text">
+            <input type = "text" id = waterWeight>
             <br><br>
-            <button value = calculate onclick="calculateBMI()">Calculate</button>
-            <p>Your water requirement is:</p>
+            <button value = calculate onclick="calculateWater()">Calculate</button>
+            <p id = waterResult></p>
         </div>
 
-        <div class = fat>
+        <div class = fat id = f>
             <h1 class = subT>Body fat percentage</h1>
-            <p>Your fat percentage show you simply if you have too much fat in your<br>
-                body. Here is the table to compare your results</p>
+            <p>Your fat percentage show you simply if you have too much fat in your body.
+               We will use the Wilmore formula. Here is the table to compare your results</p>
                 <table>
                     <tr>
                         <th></td>
@@ -195,21 +204,21 @@ InShape - Home
                     </tr>
                 </table>
             <p>Insert your height (in centimeters):</p>
-            <input type = "text">
+            <input type = "text" id = fatHeight>
             <p>Gender:</p>
-            <select>
+            <select id = fatGender>
                     <option value = "m">Male</option>
                     <option value = "f">Female</option>
             </select>
             <p>Insert waist circumference:</p>
-            <input type = "text">
+            <input type = "text" id = waistFat>
             <p>Insert neck circumference:</p>
-            <input type = "text">
+            <input type = "text" id = neckFat>
             <p>Insert flanks circumference:</p>
-            <input type = "text">
+            <input type = "text" id = flanksFat>
             <br><br>
-            <button value = calculate onclick="calculateBMI()">Calculate</button>
-            <p>Your body fat percentage is:</p>
+            <button value = calculate onclick="calculateFat()">Calculate</button>
+            <p id = fatResult></p>
         </div>
     </div>
 </div>

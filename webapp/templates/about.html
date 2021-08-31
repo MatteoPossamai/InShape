@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+About 
+{% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='aboutStyle.css') }}">
+{% endblock %}
+
+{% block mainContent %}
+<h1 class = title>InShape - About</h1>
+<p class = text > InShape is the ultimate way to check how healthy you are, online. It allows
+    you to check some parameters, understand your shape via proved scientific 
+    formulas, creating some meal tips, and also keep track of your activity, 
+    so you can understand really how healty you are, and where to improve your 
+    habbit. All the content of this site was selected by good resarch on varius 
+    sites and resources. Anyway, we encourage you to inform yourself about 
+    healty life style, and we remember you to trust more your medician than 
+    this and other website. With that sad, we think our content could help you. 
+    If you have something to say, please report to our contact. Have a great time
+    on our site.
+</p>
+{% endblock %}

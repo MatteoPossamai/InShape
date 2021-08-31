@@ -1,0 +1,13 @@
+.title{
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: 36pt;
+}
+
+.text{
+    font-family: serif;
+    font-size: 18pt;
+    justify-content: center;
+    margin:1% 10% 110px 10%;
+}

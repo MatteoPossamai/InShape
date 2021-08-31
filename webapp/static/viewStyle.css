@@ -1,7 +1,7 @@
 .title{
     font-family: 'Merriweather', serif;
     text-align: center;
-    color: red;
+    color: #6f0;
     margin-top: 20px;
     font-size: 40pt;
     font-weight: 3000;
@@ -37,11 +37,14 @@
     height:30%;
     width:30%;
     margin-top: 30px;
+    box-shadow: 20px 20px 10px #ddd;
 }
 
 .widget{
     display:flex;
     margin: auto;
+    width:30%;
+    margin-bottom: 100px;;
 }
 
 .buttons{
@@ -53,11 +56,23 @@
     height: 75px;
     width: 85px;
     padding: 5px;
+    border-radius: 0px;
+    border: 1px #ddd solid;
+    background-color: #ddd;
+    margin: 0px;
+    border-top-right-radius: 15px 15px;
+    border-bottom-left-radius: 15px 15px;
 }
 
+#bmi, .bmi{
+    background-color: #6f0;
+}    
+
 .ideal,.calories, .water, .fat, .bmi{
-    width:70%;
-    background-color: #f00;
+    width:100%;
+    border: 1px solid #ddd;
+    border-top-right-radius: 30px 30px;
+    border-bottom-left-radius: 30px 30px;
 }
 
 .ideal,.calories, .water, .fat{
@@ -71,6 +86,7 @@ table, th, td{
 
 table{
     border-collapse: collapse;
+    margin: auto;
 }
 
 tr:nth-child(even) {
