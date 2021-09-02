@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+<!--https://stackoverflow.com/questions/61766673/on-click-of-the-button-my-page-reloads-why-->
+
 {% block title%}
 InShape - Home
 {% endblock %}
@@ -74,17 +76,15 @@ InShape - Home
                         <td>Obese</td>
                     </tr>
                 </table>
-            <form>
                 <!--form with required entry-->
-                <p>Insert your height (in meters):</p>
-                <input type = "text" id = bmiHeight>
-                <p>Insert your weight (in kilograms):</p>
-                <input type = "text" id = bmiWeight>
-                <br><br>
-                <button value = calculate onclick="calculateBMI()">Calculate</button>
-                <br><br>
-                <p id = bmiResult></p>
-            </form>
+            <p>Insert your height (in meters):</p>
+            <input type = "text" id = bmiHeight>
+            <p>Insert your weight (in kilograms):</p>
+            <input type = "text" id = bmiWeight>
+            <br><br>
+            <button value = calculate onclick="calculateBMI()">Calculate</button>
+            <br><br>
+            <p id = bmiResult></p> 
         </div>
 
         <div class = ideal id = i>
@@ -97,20 +97,18 @@ InShape - Home
             accurate and really used. The Key formula does the same, and is the reccomended
             one. The Perrault formula count also age, but tend to overestimate the result
             An average around the three, is probably the best thing</p>
-            <form>
-                <p>Insert your height (in centimeters):</p>
-                <input type = "text" id = idealHeight>
-                <p>Gender:</p>
-                <select id = idealGender>
-                    <option value = "m">Male</option>
-                    <option value = "f">Female</option>
-                </select>
-                <p>Insert your age :</p>
-                <input type = "number" id = idealAge>
-                <br><br>
-                <button value = calculate onclick="calculateIdeal()">Calculate</button>
-                <p id = idealResult></p>
-            </form>
+            <p>Insert your height (in centimeters):</p>
+            <input type = "text" id = idealHeight>
+            <p>Gender:</p>
+            <select id = idealGender>
+                <option value = "m">Male</option>
+                <option value = "f">Female</option>
+            </select>
+            <p>Insert your age :</p>
+            <input type = "number" id = idealAge>
+            <br><br>
+            <button value = calculate onclick="calculateIdeal()">Calculate</button>
+            <p id = idealResult></p>
         </div>
 
         <div class = calories id = c>
@@ -120,22 +118,17 @@ InShape - Home
             consume too much, your fat increase. So, is necessary know the correct 
             ammount of calories to consume. It depends on your ideal weight, your gender
             and how much calories you burn during the day</p>
-            <form>
-                <!--form with required entry-->
                 <p>Insert your <b>ideal</b> weight (in kilograms):</p>
                 <input type = "text" id = caloriesWeight>
+                <p>Insert your height (in centimeters):</p>
+                <input type = "text" id = caloriesHeight>
                 <p>Gender:</p>
                 <select id = caloriesGender>
                     <option value = "m">Male</option>
                     <option value = "f">Female</option>
                 </select>
                 <p>Age:</p>
-                <select id = caloriesAge>
-                    <option value = 18>18 - 29</option>
-                    <option value = 30>30 - 59</option>
-                    <option value = 60>60 - 74</option>
-                    <option value = 75>>75</option>
-                </select>
+                <input type = "text" id = caloriesAge>
                 <p>Type of work:</p>
                 <select id = caloriesWork>
                     <option value = "sed">Sedentary</option>
@@ -151,8 +144,7 @@ InShape - Home
                 </select>
                 <br><br>
                 <button value = calculate onclick="calculateCalories()">Calculate</button>
-                <p>Your calories requirement is:</p>
-            </form>
+                <p id = caloriesResult></p>
         </div>
 
         <div class = water id = w>

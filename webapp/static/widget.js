@@ -6,10 +6,10 @@ function calculateBMI(){
     let bmi = parseFloat(weight) / (parseFloat(height) * parseFloat(height));
 
     let result = document.getElementById("bmiResult");
+    bmi = bmi.toString();
+    bmi = bmi.slice(0,5);
 
     result.innerText = "Your BMI is:" + bmi;
-
-    console.log(bmi);
 }
 
 function calculateIdeal(){
@@ -29,12 +29,14 @@ function calculateIdeal(){
         lorentz = parseInt(height) - 100 - ((parseInt(height) - 150) / 2);
         keys = ((parseInt(height) / 100) * (parseInt(height) / 100)) * 20.6;
     }
+    keys = keys.toString();
+    keys = keys.slice(0,5);
     let perrault = parseInt(height) - 100 + ( age / 10) * 0.9; 
 
     let result = document.getElementById("idealResult");
-    result.innerText = "Ideal weight according to Lorentz formula:" + lorentz + "<br>"+
-    "Ideal weight according to Keys formula:" + keys + "<br>" + "Ideal weight" +
-    " according to perrault formula:" + perrault;
+    result.innerText = "Ideal weight according to Lorentz formula:" + lorentz +
+    "kg. Ideal weight according to Keys formula:" + keys + "kg. Ideal weight" +
+    " according to perrault formula:" + perrault + "kg.";
 
     console.log(lorentz, keys, perrault);
 }
@@ -43,21 +45,47 @@ function calculateCalories(){
     let ideal = document.getElementById("caloriesWeight").value;
     let select = document.getElementById("caloriesGender");
     let gender = select.options[select.selectedIndex].value;
-    let select1 = document.getElementById("caloriesAge");
-    let age = select1.options[select1.selectedIndex].value;
+    let age = document.getElementById("caloriesAge").value;
     let select2 = document.getElementById("caloriesWork");
     let work = select2.options[select2.selectedIndex].value;
     let select3 = document.getElementById("caloriesWorkout");
     let workout = select3.options[select3.selectedIndex].value;
+    let height = document.getElementById("caloriesHeight").value;
+    let metabolismo;
+    if (gender=="m"){
+        metabolismo = 66.5 + (13.8 * parseInt(ideal)) + (5 * parseInt(height)) - (6.8 * parseInt(age)); 
+    }else{
+        metabolismo = 655 + (9.6 * parseInt(ideal)) + (1.9 * parseInt(height)) - (4.7 * parseInt(age)); 
+    }
+
+    if(work=="sed"){
+        metabolismo += 200;
+    }else if(work == "qhe"){
+        metabolismo += 400;
+    }else{
+        metabolismo += 700;
+    }
+
+    if(workout=="sed"){
+        metabolismo += 150;
+    }else if(workout == "qhe"){
+        metabolismo += 300;
+    }else{
+        metabolismo += 500;
+    }
+
+    console.log(metabolismo);
+
+    let result = document.getElementById("caloriesResult");
+    result.innerText = "Your daily calories requirement is: " + metabolismo + "kcal. Important: this extimation has been made" + 
+    " considering your ideal weight. So, the number of calories that we told you, is the ammount of calories that would help" + 
+    "you arrive that weight, and be InShape."
 }
 
 function calculateWater(){
     let weight = document.getElementById("waterWeight").value;
     let result = document.getElementById("waterResult");
     result.innerText = "Your water requirement is: " + parseInt(weight)*30 + "ml";
-
-    console.log(parseInt(weight)*30);
-
 }
 
 function calculateFat(){
@@ -65,11 +93,11 @@ function calculateFat(){
     height = parseInt(height);
     let select = document.getElementById("fatGender");
     let gender = select.options[select.selectedIndex].value;
-    let waist = document.getElementById("waistFat");
+    let waist = document.getElementById("waistFat").value;
     waist = parseInt(waist);
-    let neck = document.getElementById("neckFat");
+    let neck = document.getElementById("neckFat").value;
     neck = parseInt(neck);
-    let flanks = document.getElementById("flanksFat");
+    let flanks = document.getElementById("flanksFat").value;
     flanks = parseInt(flanks);
 
     let fat;
@@ -79,11 +107,10 @@ function calculateFat(){
     }else{
         fat = 495 / (1.29579-0.35004*(Math.log(waist + flanks - neck))+0.211 * Math.log(height)) - 450;
     }
+    fat = Math.abs(fat);
 
     let result = document.getElementById("fatResult");
     result.innerText = "Your fat percentage is: " + fat + "%";
-
-    console.log(fat, neck, waist, flanks, height);
 }
 
 function change(c){
