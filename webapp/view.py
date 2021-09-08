@@ -7,6 +7,10 @@ view = Blueprint("view", __name__)
 def home():
     return render_template("home.html")
 
-@view.route("/about")
+@view.route("/about", methods=["GET","POST"])
 def about():
     return render_template("about.html")
+
+@view.route("/healthy", methods=["GET","POST"])
+def healthy():
+    return render_template("health.html")

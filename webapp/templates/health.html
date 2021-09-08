@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title%}
+InShape - Healthy Meal
+{% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='aboutStyle.css') }}">
+<script src="{{ url_for('static', filename='widget.js') }}"></script>
+{% endblock %}
+
+{% block mainContent %}
+
+<h1 class = title>Healthy Meal</h1>
+<br>
+<p class = text>Do you need an idea for a meal? You are in the right place. Select the type of meal,
+     your situation, and you will have an idea for a healthy meal. Try it, now
+    <br><br>
+     Select the meal you are going to consume and what are your fisical goals.</p>
+
+<form class = formMeal method="POST">
+    <select id = meal>
+        <option value = "brk">Breakfast</option>
+        <option value = "lun">Lunch</option>
+        <option value = "din">Dinner</option>
+        <option value = "sna">Snack</option>
+    </select>
+
+    <select id = situation>
+        <option value = "los">Lose weight</option>
+        <option value = "mai">Maintain weight</option>
+        <option value = "gai">Gain weight</option>
+    </select>
+    <input type = "submit" class = sub>
+</form>
+
+
+{% endblock %}

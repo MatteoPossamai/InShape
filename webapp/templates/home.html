@@ -14,9 +14,9 @@ InShape - Home
 {% block mainContent %}
 <h1 class = title>InShape - The source of wellness</h1>
 
-<form class = infoBar>
+<form class = infoBar method="POST">  
     <input type = "submit" value = "About" class = topMenu formaction="{{ url_for('view.about') }}">
-    <button value = "Health Food" class = topMenu id = h>Health Food</button>
+    <input type = "submit" value = "Healthy Meals" class = topMenu formaction="{{ url_for('view.healthy') }}">
     <button value = "Your Plan" class = topMenu id = p>Your Plan (PRO)</button>
 </form>
 
