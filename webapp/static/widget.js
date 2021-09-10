@@ -171,9 +171,10 @@ function putRecipe(json,meal,situation){
         let index = parseInt(Math.random() * (lung));
         recipe = json["snack"][situation][index];
     }
-    console.log(recipe);
-    let nome = document.getElementById("nome");
-    console.log(recipe.name)
+    console.log(recipe.name);
+    let rec = document.getElementById("recipe");
+    rec.style.visibility = "visible";
+    rec.innerHTML = "<h1 id = \"name\">" + recipe.name +"</h1> <p id = \"text\"><b>Ingredients: </b>"+ recipe.ingredient + "<br><b>Recipe: </b>" +  recipe.recipe + "<br><b>Macro: </b>" + recipe.macro + "</p>" 
 }
 
 function getRandomArbitrary(min, max) {

@@ -5,13 +5,13 @@
                 "name" : "Fruit Shake",
                 "ingredient" : "Up to 300g of fresh fruit",
                 "recipe": "Put all the chosen fruit in the mixer, unitl you have a liquid fruit shake, that as low calories and a good taste",
-                "macro-review": "Some carbs, represented by natural sugar, a lot of vitamin"
+                "macro": "Some carbs, represented by natural sugar, a lot of vitamin"
             },
             {
                 "name" : "Avocado and smoked salmon toasts",
                 "ingredient": "Avocado, toast, smocked salmon", 
                 "recipe": "Put the avocado on the toast, and then the smocked salmon. If you really want to lose fat, don't put too much avocado",
-                "macro-review":"A few carbs, represented by bread, and a lot of protein, represented by avocado and salmon"
+                "macro":"A few carbs, represented by bread, and a lot of protein, represented by avocado and salmon"
             }
         ],
         "main": [
@@ -19,13 +19,13 @@
                 "name" : "Banana milk",
                 "ingredient" : "Milk, banana, cereals",
                 "recipe": "Cut the banana in small slice, and then put it with cereals in the milk",
-                "macro-review":"Carbs represented by cereals and banana, and the good fat and the protein of the milk. Totaly healthy"
+                "macro":"Carbs represented by cereals and banana, and the good fat and the protein of the milk. Totaly healthy"
             },
             {
                 "name" : "Proteic pancake",
                 "ingredient": "Greek jougurt, oats flour, eggs", 
                 "recipe":"After mounting the albums to snow, add the flour oats and yogurt mixing. cook in one non-stick pan",
-                "macro-review":"High in protein, only a few of carbs"
+                "macro":"High in protein, only a few of carbs"
             }
         ],
         "gain": [
@@ -33,13 +33,13 @@
                 "name" : "Greek jougurt with nuts",
                 "ingredient":"Greek jougurt and nuts, but also every type of dried fruit. If you want, add also some berries",
                 "recipe": "Put the nuts in the jougurt, and shake a bit",
-                "macro-review": "Preatty rich in carbs, due of the nuts, but also in protein"
+                "macro": "Preatty rich in carbs, due of the nuts, but also in protein"
             },
             {
                 "name": "Coconut coffee shake",
                 "ingredient": "Caffe, dried coconut, sugar, milk", 
                 "recipe": "Put the coffe and the milk in the same glass, and shake. Then add the sugar, the coconut. Add also other dried fruit if you want",
-                "macro-review": "High in carbs, but also with an high protein due of the presence of the milk. "
+                "macro": "High in carbs, but also with an high protein due of the presence of the milk. "
             }
         ]
     },
@@ -49,13 +49,13 @@
                 "name" : "Zucchini spaghetti with tomato",
                 "ingredient" : "Zucchini and tomato sauce",
                 "recipe": "Create the spaghetti using a spiralizator, then put the tomato sauce, and let it cooks for some minute",
-                "macro-review": "Rich in vitamin, rich in fiber, no carbs, only a few of protein"
+                "macro": "Rich in vitamin, rich in fiber, no carbs, only a few of protein"
             },
             {
                 "name": "Mediterranean salad",
                 "ingredient": "Boiled eggs, lettuce, tomato, olives",
                 "recipe": "Boil the egg, cut lettuce and tomato, then put all the ingredients in the same recipe",
-                "macro-review": "Good amount of protein, due of the egg, no carbs, good amount of vitamin and fiber"
+                "macro": "Good amount of protein, due of the egg, no carbs, good amount of vitamin and fiber"
             }
         ],
         "main": [
@@ -63,13 +63,13 @@
                 "name" : "Pasta genovese",
                 "ingredient" : "Pasta (100g per person), pesto, potatos, basil",
                 "recipe": "Cook the pasta normally, cut in very small pieces the potatos, and then put them with the pesto. When the pasta is coocked, put everithing toghether",
-                "macro-review": "Good carbs amount, high in fiber, has also deoxindants"
+                "macro": "Good carbs amount, high in fiber, has also deoxindants"
             },
             {
                 "name" : "Chicken salad",
                 "ingredient":"Chicken, lettuce, a choosen sauce, better if light",
                 "recipe": "Cut the chicken in small pieces, asnd then cook it. Put the coocked chicken on lettuce leaf with the sauce. You can eat now, or make a wrap with another lettuce leaf",
-                "macro-review": "No carbs, high protein, good amount of fiber"
+                "macro": "No carbs, high protein, good amount of fiber"
             }
         ],
         "gain": [
@@ -77,13 +77,13 @@
                 "name": "Basmati rice with scrambled egg",
                 "ingredient": "Basmati rice, and two eggs",
                 "recipe":"Cook the rice and make scrambled eggs. Then destroy the egg, and put everything toghether. It would be delicius and healthy",
-                "macro-review": "High in carbs and protein"
+                "macro": "High in carbs and protein"
             },
             {
                 "name": "Potatoes and chicken",
                 "ingredient": "Potatoes and chiocken",
                 "recipe": "Grill the chicken, and backes potatoes. Choose the same amount of chicken and potatoes",
-                "macro-review": "High both in carbs and in protein. Has also a few of good fat. Exelent for gain weight"
+                "macro": "High both in carbs and in protein. Has also a few of good fat. Exelent for gain weight"
             }
         ]
     },
@@ -93,13 +93,13 @@
                 "name":"Salmon salad",
                 "ingredient":"Salmon, lettuce, tomatos",
                 "recipe": "Cut tomato and lettuce as you prefer. You can choose if you want to cook salmon. Then, put everything toghether",
-                "macro-review":"High in fiber, with a good amount of protein"
+                "macro":"High in fiber, with a good amount of protein"
             },
             {
                 "name":"Cuscus",
                 "ingredient": "Cuscus, olives, carrot",
                 "recipe":"Prepare the cuscus following steps in the container, cut the carrots. When everything is ready, melt everithing toghether",
-                "macro-review":"High in carbs, but also in fiber and vitamin"
+                "macro":"High in carbs, but also in fiber and vitamin"
             }
         ],
         "main": [
@@ -107,13 +107,13 @@
                 "name":"Fish spaghetti",
                 "ingredient":"Spaghetti, shrimps",
                 "recipe": "Cook the spaghetti and the shrimps in different pots, then melt everithing. If you want, add basil or some spicies",
-                "macro-review": "Good amount of carbs and protein, with also fiber"
+                "macro": "Good amount of carbs and protein, with also fiber"
             },
             {
                 "name": "Rich sandwick",
                 "ingredient":"Bread, lettuce, tomatoes, chicken meat stripes",
                 "recipe":"Cook the chicken meat stripes. Then put all the ingredients in the bread. Enjoy",
-                "macro-review": "Low carbs, good in protein, fiber and vitamin"
+                "macro": "Low carbs, good in protein, fiber and vitamin"
             }
         ],
         "gain": [
@@ -121,13 +121,13 @@
                 "name":"Friulan frico",
                 "ingredient": "Unripened cheese, potatoes",
                 "recipe": "Cut in small peaces the potatoes, then melt the cheese in the same pan of the potatoes, until it grills a bit",
-                "macro-review":"Good amount of fat and protein"
+                "macro":"Good amount of fat and protein"
             },
             {
                 "name": "Pork potatoes",
                 "ingredient": "Pork chop, potatoes, carrots and barbecue sauce",
                 "recipe": "Cook the pork chop. Cut and cook both potatoes and carrots. Put everything toghether, and add the barbecue sauce",
-                "macro-review": "High protein, carbs, and carotene"
+                "macro": "High protein, carbs, and carotene"
             }
         ]
     }, 
@@ -137,13 +137,13 @@
                 "name" : "Berries jougurt",
                 "ingredient": "Greek jougurt and random berries",
                 "recipe": "Put the berries in the same cup with the greek jougurt. That is all",
-                "macro-review": "Good amount of protein and vitamin"
+                "macro": "Good amount of protein and vitamin"
             },
             {
                 "name" : "Fruit salad",
                 "ingredient": "Random fruit, not dried",
                 "recipe": "After choosing the fruit, cut it and put everithing in a bowl. If you want, add some lemon juice",
-                "macro-review": "Carbs, represented by good frui sugar. High in vitamin and fiber"
+                "macro": "Carbs, represented by good frui sugar. High in vitamin and fiber"
             }
         ],
         "main": [
@@ -151,13 +151,13 @@
                 "name":"Salmon burger small",
                 "ingredient": "A small bread, salmon",
                 "recipe": "Put the salmon beetwen the two half of the bread. Don't choose an enormus bread",
-                "macro-review": "Both carbs and protein"
+                "macro": "Both carbs and protein"
             },
             {
                 "name": "Banana and strawberries shake",
                 "ingredient":"Milk, banana, strawberries",
                 "recipe":"Put everything in the mixer, until is a liquid uniform delicius meal",
-                "macro-review": "High in vitaimn, carbs, and with a few of good fat"
+                "macro": "High in vitaimn, carbs, and with a few of good fat"
             }
         ],
         "gain": [
@@ -165,13 +165,13 @@
                 "name":"Avocato toast",
                 "ingredient": "Avocado, toast",
                 "recipe": "Put the content of the avocato on the toast bread",
-                "macro-review": "High in protein, with some carbs"
+                "macro": "High in protein, with some carbs"
             },
             {
                 "name":"Sweet jougurt with nuts",
                 "ingredient":"Honey, white jougurt, nuts or dried fruit",
                 "recipe":"Put the honey in the jougurt. Mix it, and then add nuts",
-                "macro-review": "High in carbs, protein, and with a few of good fat"
+                "macro": "High in carbs, protein, and with a few of good fat"
             }
         ]
     }

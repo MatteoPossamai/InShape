@@ -21,7 +21,6 @@
 
 .formMeal{
     margin: auto;
-    margin-bottom: 300px;
     margin-top: 50px;
 }
 
@@ -37,16 +36,27 @@
     font-weight: bold;
     font-size: 18pt;
     color: #fff;
-    background-color: #000;
+    background-color: #6f0;
     border: 1px #fff solid;
     border-radius: 10px;
 }
 
 .btn{
-    color: #fff;
-    background-color: #000;
+    background-color: #6f0;
+    font-family: 'Merriweather', serif;
     margin: auto;
     padding:10px;
     border: #fff solid 1px;
     border-radius: 10px;
+}
+
+#recipe{
+    visibility: hidden;
+    margin: 10px 20% 100px 20% ;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-top-right-radius: 15px 15px;
+    border-bottom-left-radius: 15px 15px;
+    color: #fff;
+    background-color: #6f0;
 }
