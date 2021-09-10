@@ -9,10 +9,44 @@
     font-family: serif;
     font-size: 18pt;
     justify-content: center;
-    margin:1% 10% 110px 10%;
+    margin:1% 10% 0 10%;
+}
+
+.text1{
+    font-family: serif;
+    font-size: 18pt;
+    justify-content: center;
+    margin:1% 10% 300px 10%;
 }
 
 .formMeal{
     margin: auto;
-    margin-bottom: 30%;
+    margin-bottom: 300px;
+    margin-top: 50px;
+}
+
+.selection{
+    display:flex;
+    flex-direction: column;
+}
+
+#meal, #situation{
+    padding: 10px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    font-size: 18pt;
+    color: #fff;
+    background-color: #000;
+    border: 1px #fff solid;
+    border-radius: 10px;
+}
+
+.btn{
+    color: #fff;
+    background-color: #000;
+    margin: auto;
+    padding:10px;
+    border: #fff solid 1px;
+    border-radius: 10px;
 }

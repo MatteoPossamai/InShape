@@ -141,3 +141,41 @@ function change(c){
         }
     }
 }
+
+function getRecipe(){
+    let select1 = document.getElementById("meal");
+    let meal = select1.options[select1.selectedIndex].value;
+    let select2 = document.getElementById("situation");
+    let situation = select2.options[select2.selectedIndex].value;
+    fetch("/static/recipe.json") 
+    .then(response => response.json()) 
+    .then(json => putRecipe(json, meal,situation)); 
+}
+
+function putRecipe(json,meal,situation){
+    let recipe;
+    if(meal == "brk"){
+        let lung = json["breakfast"][situation].length;
+        let index = parseInt(Math.random() * (lung));
+        recipe = json["breakfast"][situation][index];
+    }else if(meal == "lun"){
+        let lung = json["lunch"][situation].length;
+        let index = parseInt(Math.random() * (lung));
+        recipe = json["lunch"][situation][index];
+    }else if(meal == "din"){
+        let lung = json["dinner"][situation].length;
+        let index = parseInt(Math.random() * (lung));
+        recipe = json["dinner"][situation][index];
+    }else{
+        let lung = json["snack"][situation].length;
+        let index = parseInt(Math.random() * (lung));
+        recipe = json["snack"][situation][index];
+    }
+    console.log(recipe);
+    let nome = document.getElementById("nome");
+    console.log(recipe.name)
+}
+
+function getRandomArbitrary(min, max) {
+    return parseInt(Math.random() * (max - min) + min);
+}

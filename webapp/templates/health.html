@@ -7,6 +7,7 @@ InShape - Healthy Meal
 {% block extrahead %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='aboutStyle.css') }}">
 <script src="{{ url_for('static', filename='widget.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='recipe.json') }}"></script>
 {% endblock %}
 
 {% block mainContent %}
@@ -17,22 +18,34 @@ InShape - Healthy Meal
      your situation, and you will have an idea for a healthy meal. Try it, now
     <br><br>
      Select the meal you are going to consume and what are your fisical goals.</p>
-
-<form class = formMeal method="POST">
-    <select id = meal>
+<br><br>
+<div class = formMeal method="POST">
+    <div class = selection>
+    <p class = text>Choose the meal</p>
+    <select id = meal name = meal>
         <option value = "brk">Breakfast</option>
         <option value = "lun">Lunch</option>
         <option value = "din">Dinner</option>
         <option value = "sna">Snack</option>
     </select>
 
-    <select id = situation>
-        <option value = "los">Lose weight</option>
-        <option value = "mai">Maintain weight</option>
-        <option value = "gai">Gain weight</option>
+    <p class = text>Choose your goals</p>
+    <select id = situation name = situation>
+        <option value = "lose">Lose weight</option>
+        <option value = "main">Maintain weight</option>
+        <option value = "gain">Gain weight</option>
     </select>
-    <input type = "submit" class = sub>
-</form>
+    </div>
+    <br><br>
+    <input type = "submit" class = sub value="See the meal" class = btn onclick="getRecipe()">
+</div>
+
+<div id = "recipe">
+    <h1 id = "name"></h1>
+    <p id = "ingredient"></p>
+    <p id = "recipe"></p>
+    <p id = "macro"></p>
+</div>
 
 
 {% endblock %}
