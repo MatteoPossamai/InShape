@@ -1,7 +1,5 @@
 from flask import Blueprint, render_template, session, redirect, url_for, request
-from flask_login import current_user
-import json
-import os
+from flask_login import current_user, login_required
 
 view = Blueprint("view", __name__)
 
@@ -16,3 +14,8 @@ def about():
 @view.route("/healthy", methods=["GET","POST"])
 def healthy():
     return render_template("health.html")
+    
+@view.route("/journey", methods=["GET", "POST"])
+@login_required
+def journey():
+    return 
