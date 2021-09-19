@@ -15,7 +15,7 @@ def login():
             if psw == user.password:
                 flash("Logged succesfully", category="success")
                 login_user(user, remember=True)
-                return redirect(url_for("views.home"))
+                return redirect(url_for("view.journey"))
             else:
                 flash("Incorrect password", category="error")
         else:
@@ -46,7 +46,7 @@ def signup():
             db.session.commit()
             login_user(new_user, remember=True)
             flash("Account created", category="Success")
-            return redirect(url_for("views.home"))
+            return redirect(url_for("view.journey"))
     return render_template("signup.html", user=current_user)
 
 @auth.route('/logout')

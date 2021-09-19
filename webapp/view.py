@@ -18,4 +18,4 @@ def healthy():
 @view.route("/journey", methods=["GET", "POST"])
 @login_required
 def journey():
-    return 
+    return render_template("journey.html", user = current_user)
