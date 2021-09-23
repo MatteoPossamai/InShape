@@ -92,3 +92,22 @@ table{
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+#myChart{
+    height:800px;
+    width:800px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.bottom{
+    margin: auto;
+    font-size: 18pt;
+    padding: 20px;
+}
+
+.bottom .btn{
+    background-color: #6f0;
+    border: 1px #ffffff solid;
+    border-radius: 5px;
+}

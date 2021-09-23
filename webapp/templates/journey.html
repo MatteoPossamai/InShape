@@ -2,6 +2,7 @@
 {% block title %}InShape - Journey{% endblock %}
 
 {% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='viewStyle.css') }}">
 <script src="{{url_for('static', filename='node_modules/chartjs/dist/chart.js')}}"></script>
 {% endblock %}
 
@@ -11,22 +12,40 @@
 </div>
 <h1>Your Journey</h1>
 
-<p style="margin-bottom: 200px;">Here you can keep track of your weight, and graphically see how it is going</p>
+<p style="margin-bottom: 50px;">Here you can keep track of your weight, and graphically see how it is going</p>
 
-<canvas id = "myChart" height="400" width ="400" style="border: 1px solid black;"></canvas>
+<canvas id = "myChart" style="border: 1px solid black;"></canvas>
 
-<form method="post" style="margin-bottom: 200px;">
-    <input type="text" name = "value">
+<form method="post" style="margin-bottom: 200px;" class = "bottom">
+    <input type="text" name = "value" value = "">
     <input type="submit" value = "Add value" class="btn">
 </form>
 
 <script>
 
-data = {};
+let data = ('{{ data|tojson }}');
+data = JSON.parse(data);
+let labels = [];
+
+for(i=0;i<data.length;i++){
+    labels.push(i.toString());
+}
+
+let values = {
+    labels: labels,
+    datasets: [{
+        label: "Weight Story",
+        data:data,
+        fill:false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+    }]
+};
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
-    data: data});
+    data: values});
+
 </script>
 {% endblock %}
