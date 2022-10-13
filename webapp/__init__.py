@@ -7,14 +7,10 @@ db = SQLAlchemy()
 DB_NAME = "database.db"
 
 def create_app():
-    app = Flask(__name__,static_url_path='/static')
-    app.config['SECRET_KEY'] = "healtykey"
-    app.config['MYSQL_HOST'] = 'sql11.freemysqlhosting.net'
-    app.config['MYSQL_USER'] = 'sql11522528'
-    app.config['MYSQL_PASSWORD'] = 'y6TEA9gq4R'
-    app.config['MYSQL_DB'] = 'sql11522528'
+    app = Flask(__name__, static_url_path='/static')
+    app.config['SECRET_KEY'] = 'healthykey'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
-    db.init_app(app)
     db.init_app(app)
     #config also databases when created
     from .model import User
@@ -43,4 +39,6 @@ def create_app():
 
 def create_database(app):
     if not path.exists(DB_NAME):
-        db.create_all(app=app)
+        with app.app_context():
+            db.create_all()
+        print('Created Database!')
